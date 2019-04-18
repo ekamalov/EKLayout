@@ -151,11 +151,11 @@
 		45A04BBA2266F90700AE6E23 /* EKLayout */ = {
 			isa = PBXGroup;
 			children = (
+				45A04BD12266FB3E00AE6E23 /* Protocols */,
+				45A04BD82266FB3E00AE6E23 /* Models */,
 				45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */,
 				45A04BDC2266FB3E00AE6E23 /* EKLayout+Helper.swift */,
 				45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */,
-				45A04BD82266FB3E00AE6E23 /* Models */,
-				45A04BD12266FB3E00AE6E23 /* Protocols */,
 				45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */,
 			);
 			path = EKLayout;
