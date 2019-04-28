@@ -23,26 +23,26 @@
 import UIKit
 
 
-protocol GenericConstantForValue {}
+public protocol Value {}
 
-extension Int: GenericConstantForValue {}
+extension Int: Value {}
 
-extension Float: GenericConstantForValue {}
+extension Float: Value {}
 
-extension Double: GenericConstantForValue {}
+extension Double: Value {}
 
-extension CGFloat: GenericConstantForValue {}
+extension CGFloat: Value {}
 
-extension Percent: GenericConstantForValue {}
+extension Percent: Value {}
 
-extension CGSize: GenericConstantForValue {}
+extension CGSize: Value {}
 
-extension CGPoint: GenericConstantForValue {}
+extension CGPoint: Value {}
 
 
-extension GenericConstantForValue {
+extension Value {
     
-    var convertToCGFloat:CGFloat {
+    var toCGFloat:CGFloat {
         switch self {
         case let value as CGFloat: return value
         case let value as Double: return CGFloat(value)
@@ -54,10 +54,10 @@ extension GenericConstantForValue {
         }
     }
     
-    var size: CGSize {
+    var toSize: CGSize {
         switch self {
         case let value as CGSize: return value
-        default: return CGSize(width: convertToCGFloat, height: convertToCGFloat)
+        default: return CGSize(width: toCGFloat, height: toCGFloat)
         }
     }
     

@@ -22,7 +22,7 @@
 
 import UIKit
 
-class Repository {
+public class Repository {
     private var temporaryConstraint = [Constraint]()
     private var prodConstraint = [Constraint]()
     

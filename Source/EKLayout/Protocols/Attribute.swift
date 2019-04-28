@@ -22,54 +22,61 @@
 
 import UIKit
 
-protocol ConstraintAttributes {
+
+public protocol ConstraintAttributes {
     associatedtype classType
     func prepareTempBuffer(_ attribute:EKLayoutAttribute) -> classType
 }
 
-extension ConstraintAttributes {
 
-    internal var left: classType {
+extension ConstraintAttributes {
+    
+    public var left: classType {
         return self.prepareTempBuffer(.left)
     }
     
-    internal var right: classType {
+    public var right: classType {
         return self.prepareTempBuffer(.right)
     }
     
-    internal var top: classType {
+    public var top: classType {
         return self.prepareTempBuffer(.top)
     }
     
-    internal var bottom: classType {
+    public var bottom: classType {
         return self.prepareTempBuffer(.bottom)
     }
     
-    internal var leading: classType {
+    public var leading: classType {
         return self.prepareTempBuffer(.leading)
     }
     
-    internal var trailing: classType {
+    public var trailing: classType {
         return self.prepareTempBuffer(.trailing)
     }
     
-    internal var width: classType {
+    public var width: classType {
         return self.prepareTempBuffer(.width)
     }
     
-    internal var height: classType {
+    public var height: classType {
         return self.prepareTempBuffer(.height)
     }
     
-    internal var centerX: classType {
+    public var centerX: classType {
         return self.prepareTempBuffer(.centerX)
     }
     
-    internal var centerY: classType {
+    public var centerY: classType {
         return self.prepareTempBuffer(.centerY)
     }
     
-    internal var lastBaseline: classType {
+    public var lastBaseline: classType {
         return self.prepareTempBuffer(.lastBaseline)
     }
+}
+
+
+protocol AttributeMethods: ConstraintAttributes {
+    func top(_ offset:Value) -> classType
 }

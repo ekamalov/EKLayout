@@ -24,9 +24,9 @@ import UIKit
 
 
 public class EKLayout {
-    typealias classType = Test
+    public typealias classType = Test
     
-    internal var repository:Repository
+    private(set) var repository:Repository
     internal let view:Layoutable
     
     private var constraint:Test!
@@ -52,7 +52,7 @@ public class EKLayout {
 }
 
 extension EKLayout:ConstraintAttributes {
-    func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> Test {
+    public func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> Test {
         self.repository.addTempConst(attribute)
         return self.constraint
     }
@@ -61,9 +61,15 @@ extension EKLayout:ConstraintAttributes {
 
 extension EKLayout {
     @discardableResult
-    internal func size(_ value:GenericConstantForValue) -> classType{
-        self.width.value(value.size.width)
-        self.height.value(value.size.height)
+    public func size(_ value:Value) -> classType{
+        self.width.value(value.toSize.width)
+        self.height.value(value.toSize.height)
+        return self.constraint
+    }
+}
+
+extension EKLayout: AttributeMethods {
+    public func top(_ offset: Value) -> Test {
         return self.constraint
     }
 }

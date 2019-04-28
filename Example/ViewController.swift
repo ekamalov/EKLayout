@@ -24,10 +24,8 @@ class ViewController: UIViewController {
         }, completion: nil)
         
         
-        v.layout {
-            $0.left.value(10%).top.value(20)
-            
-            $0.size(100)
+        v.layout { view in
+            view.leading 
         }
     }
 

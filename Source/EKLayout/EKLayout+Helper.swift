@@ -22,34 +22,37 @@
 
 import UIKit
 
-public class Test:ConstraintAttributes {
-    typealias classType = Test
+public class Test {
+
+    public typealias classType = Test
     
-    private var layout:EKLayout
+    private(set) var repository: Repository
+    private(set) var layout:EKLayout
     
     internal init(layout:EKLayout){
         self.layout = layout
+        self.repository = layout.repository
     }
     
-    @discardableResult
-    func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> Test {
-        self.layout.repository.addTempConst(attribute)
-        return self
-    }
 }
 
-extension Test {
+extension Test: ConstraintAttributes {
+    
+    public func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> Test {
+        self.repository.addTempConst(attribute)
+        return self
+    }
     @discardableResult
-    internal func value(_ value:GenericConstantForValue)-> classType {
+    public func value(_ value:Value)-> classType {
         
         guard let val = value as? Percent else {
-            self.layout.repository.moveTempConstToProd(constant: value.convertToCGFloat)
+            self.repository.moveTempConstToProd(constant: value.toCGFloat)
             return self
         }
         
         guard let superViewRect = self.layout.view.superviewRect() else { return self }
         var calcPercent:CGFloat = 0
-        layout.repository.getTempConstraint().forEach {
+        repository.getTempConstraint().forEach {
             switch $0.attribute {
             case .top, .bottom:
                 calcPercent = val.of(superViewRect.height)
@@ -59,7 +62,7 @@ extension Test {
                 break
             }
         }
-        self.layout.repository.moveTempConstToProd(constant: calcPercent)
+        self.repository.moveTempConstToProd(constant: calcPercent)
         return self
     }
    

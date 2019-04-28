@@ -18,9 +18,9 @@
 		45A04BDD2266FB3E00AE6E23 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
 		45A04BDE2266FB3E00AE6E23 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
 		45A04BDF2266FB3E00AE6E23 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
-		45A04BE02266FB3E00AE6E23 /* GenericConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* GenericConstant.swift */; };
-		45A04BE12266FB3E00AE6E23 /* GenericConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* GenericConstant.swift */; };
-		45A04BE22266FB3E00AE6E23 /* GenericConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* GenericConstant.swift */; };
+		45A04BE02266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
+		45A04BE12266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
+		45A04BE22266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
 		45A04BE32266FB3E00AE6E23 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD42266FB3E00AE6E23 /* Percent.swift */; };
 		45A04BE42266FB3E00AE6E23 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD42266FB3E00AE6E23 /* Percent.swift */; };
 		45A04BE52266FB3E00AE6E23 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD42266FB3E00AE6E23 /* Percent.swift */; };
@@ -72,7 +72,7 @@
 		45A04BCB2266FADA00AE6E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45A04BCD2266FADA00AE6E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A04BD22266FB3E00AE6E23 /* Layoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
-		45A04BD32266FB3E00AE6E23 /* GenericConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericConstant.swift; sourceTree = "<group>"; };
+		45A04BD32266FB3E00AE6E23 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
 		45A04BD42266FB3E00AE6E23 /* Percent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Percent.swift; sourceTree = "<group>"; };
 		45A04BD52266FB3E00AE6E23 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -177,10 +177,10 @@
 		45A04BD12266FB3E00AE6E23 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				45A04BD22266FB3E00AE6E23 /* Layoutable.swift */,
-				45A04BD32266FB3E00AE6E23 /* GenericConstant.swift */,
-				45A04BD42266FB3E00AE6E23 /* Percent.swift */,
 				45A04BD52266FB3E00AE6E23 /* Attribute.swift */,
+				45A04BD22266FB3E00AE6E23 /* Layoutable.swift */,
+				45A04BD32266FB3E00AE6E23 /* Value.swift */,
+				45A04BD42266FB3E00AE6E23 /* Percent.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				45A04BF52266FB3E00AE6E23 /* EKLayout.swift in Sources */,
 				45A04BE62266FB3E00AE6E23 /* Attribute.swift in Sources */,
 				45A04BEC2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
-				45A04BE02266FB3E00AE6E23 /* GenericConstant.swift in Sources */,
+				45A04BE02266FB3E00AE6E23 /* Value.swift in Sources */,
 				45A04BE92266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
 				45A04BEF2266FB3E00AE6E23 /* Typealias.swift in Sources */,
 				45A04BF82266FB3E00AE6E23 /* EKLayout+Helper.swift in Sources */,
@@ -356,7 +356,7 @@
 				45A04BED2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
 				45A04BE72266FB3E00AE6E23 /* Attribute.swift in Sources */,
 				45A04BF92266FB3E00AE6E23 /* EKLayout+Helper.swift in Sources */,
-				45A04BE12266FB3E00AE6E23 /* GenericConstant.swift in Sources */,
+				45A04BE12266FB3E00AE6E23 /* Value.swift in Sources */,
 				45A04BEA2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
 				45A04BE42266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BAD2266F8D200AE6E23 /* EKLayoutTests.swift in Sources */,
@@ -381,7 +381,7 @@
 				45A04BEB2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
 				45A04BF72266FB3E00AE6E23 /* EKLayout.swift in Sources */,
 				45A04BF42266FB3E00AE6E23 /* Constraint.swift in Sources */,
-				45A04BE22266FB3E00AE6E23 /* GenericConstant.swift in Sources */,
+				45A04BE22266FB3E00AE6E23 /* Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +548,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EKLayout/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,7 +575,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EKLayout/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
