@@ -23,12 +23,25 @@
 import UIKit
 
 public class Repository {
-    private var temporaryConstraint = [Constraint]()
-    private var prodConstraint = [Constraint]()
+    private var layout:EKLayout
+    
+    
+    
+    
+    public init(layout:EKLayout) {
+        self.layout = layout
+    }
+    
+    private var temporaryConstraint = Set<Constraint>()
+    private var prodConstraint = Set<Constraint>()
     
     internal func addTempConst(_ attribute:EKLayoutAttribute)  {
-        let const = Constraint(attribute: attribute)
-        self.temporaryConstraint.append(const)
+        let const = Constraint(item: layout.view, superView: layout.view.superview, attribute: attribute)
+        if !temporaryConstraint.contains(const) {
+            self.temporaryConstraint.insert(const)
+        }else {
+            self.temporaryConstraint.update(with: const)
+        }
     }
     
     internal func removeAllTempConst(){
@@ -36,22 +49,71 @@ public class Repository {
     }
     
     internal func moveTempConstToProd(constant value: CGFloat){
-        let tmp = temporaryConstraint.compactMap { Constraint.init(attribute: $0.attribute, value: value, relation: .equal) }
-        prodConstraint.append(contentsOf: tmp)
+
+        self.temporaryConstraint.forEach { item in
+            if prodConstraint.contains(item) {
+                prodConstraint[prodConstraint.index(of: item)]
+            }
+        }
+
+
+        let tmp = temporaryConstraint.compactMap { (item) -> Constraint? in
+            var const = item
+            const.value = value
+            return const
+        }
+//
+//        prodConstraint.insertOrUpdate(tmp)
+        let s = prodConstraint.intersection(tmp)
+        self.prodConstraint = prodConstraint.union(temporaryConstraint)
         removeAllTempConst()
+    
+        //        let tmp = temporaryConstraint.compactMap { item in
+        //            var temp = item
+        //            temp.value = value
+        //            return temp
+        ////            Constraint.init(item: layout.view, attribute: $0.attribute, value: value, relation: .equal)
+        //
+        //        }
+        
+        //        prodConstraint.intersection(tmp)
+        //        prodConstraint.append(contentsOf: tmp)
+        //        removeAllTempConst()
     }
     
-    internal func addProdConst(_ constraints:Constraint...) {
-        prodConstraint.append(contentsOf: constraints)
-        removeAllTempConst()
-    }
+    //    internal func addProdConst(_ constraints:Constraint...) {
+    //        prodConstraint.append(contentsOf: constraints)
+    //        removeAllTempConst()
+    //    }
     
     
-    internal func getProdConstraint()-> [Constraint] {
+    internal func getProdConstraint()-> Set<Constraint> {
         return self.prodConstraint
     }
     
-    internal func getTempConstraint()-> [Constraint] {
+    internal func getTempConstraint()-> Set<Constraint> {
         return self.temporaryConstraint
     }
+}
+
+
+extension Set {
+    mutating func insert(_ newMembers: [Set.Element]) {
+        newMembers.forEach { (member) in
+            self.insert(member)
+        }
+    }
+    mutating func insertOrUpdate(_ newMembers:[Set.Element]){
+        newMembers.forEach { member in
+            if self.contains(member) {
+                 self.update(with: member)
+            } else {
+                self.insert(member)
+            }
+        }
+    }
+}
+
+extension Collection where Element == Constraint {
+    subscript(
 }
