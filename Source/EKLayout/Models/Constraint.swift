@@ -30,35 +30,55 @@ import UIKit
 
 
 public struct Constraint {
+    
+    public let from:Layoutable
+    
+    public let to:Layoutable?
     /// Value of the attribute
     public let attribute: EKLayoutAttribute
     
     /// Value of the constant
-    public let value: CGFloat
+    public var value: CGFloat
     
     /// Relation that applies to the `value` of the `Constant`
     public let relation: EKLayoutRelation
     
-    public init(attribute: EKLayoutAttribute,
+    public init(item view1: Layoutable,superView view2: Layoutable?, attribute: EKLayoutAttribute,
                 value: CGFloat = 0,
                 relation: EKLayoutRelation = .equal) {
+        self.from = view1
+        self.to = view2
         self.attribute = attribute
         self.value = value
         self.relation = relation
     }
-    
-//    /**
-//     This initializer creates a `Constant` with the `value`, `relations`
-//     and `multiplier` supplied.
-//     - parameter value: Value of the `Constant`
-//     - parameter relation: `Relation that applies to the `value`
-//     - parameter multiplier: Multiplier of the `Constant`
-//     - returns: the `Constant` struct created
-//     */
-//    public init(value: CGFloat, relation: EKLayoutRelation, multiplier: CGFloat) {
-//        self.value = value
-//        self.relation = relation
-//        self.multiplier = multiplier
-//    }
-    
+}
+
+extension Constraint:Hashable {
+    public static func == (lhs: Constraint, rhs: Constraint) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(relation)
+//        hasher.combine(value)
+        hasher.combine(attribute)
+    }
+}
+extension Constraint:CustomStringConvertible {}
+
+
+
+
+
+extension CustomStringConvertible {
+    public var description : String {
+        var description: String = ""
+        let selfMirror = Mirror(reflecting: self)
+        for child in selfMirror.children {
+            if let propertyName = child.label {
+                description += "\(propertyName): \(child.value)\t"
+            }
+        }
+        return description
+    }
 }
