@@ -23,20 +23,16 @@
 import UIKit
 
 
-public class EKLayout {
-    public typealias classType = Test
+public final class EKLayout {
     
-    private(set) var repository:Repository
+    internal var repository:Repository
     internal let view:Layoutable
-    
-    private var constraint:Test!
     
     internal init(view:Layoutable){
         self.view = view
         self.view.prepare()
         
         self.repository = Repository()
-        self.constraint = Test(layout: self)
     }
     
     internal static func activateLayout(view:Layoutable,closure:EKLayoutBuilderClosure)  {
@@ -51,25 +47,52 @@ public class EKLayout {
     
 }
 
-extension EKLayout:ConstraintAttributes {
-    public func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> Test {
-        self.repository.addTempConst(attribute)
-        return self.constraint
-    }
-}
-
-
 extension EKLayout {
+    internal func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> EKLayout {
+        self.repository.addTempConst(attribute)
+        return self
+    }
+    
     @discardableResult
-    public func size(_ value:Value) -> classType{
-        self.width.value(value.toSize.width)
-        self.height.value(value.toSize.height)
-        return self.constraint
+    public func margin(_ value:Value)-> EKLayout {
+        
+        guard let val = value as? Percent else {
+            self.repository.moveTempConstToProd(constant: value.toCGFloat)
+            return self
+        }
+        
+        guard let superViewRect = self.view.superviewRect() else { return self }
+        var calcPercent:CGFloat = 0
+        repository.getTempConstraint().forEach {
+            switch $0.attribute {
+            case .top, .bottom:
+                calcPercent = val.of(superViewRect.height)
+            case .left, .right:
+                calcPercent = val.of(superViewRect.width)
+            default:
+                break
+            }
+        }
+        self.repository.moveTempConstToProd(constant: calcPercent)
+        return self
     }
 }
 
-extension EKLayout: AttributeMethods {
-    public func top(_ offset: Value) -> Test {
-        return self.constraint
-    }
-}
+
+
+
+
+//extension EKLayout {
+//    @discardableResult
+//    public func size(_ value:Value) -> classType{
+//        self.width.value(value.toSize.width)
+//        self.height.value(value.toSize.height)
+//        return self.constraint
+//    }
+//}
+//
+//extension EKLayout: AttributeMethods {
+//    public func top(_ offset: Value) -> Test {
+//        return self.constraint
+//    }
+//}

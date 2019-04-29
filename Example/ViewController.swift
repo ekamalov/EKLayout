@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         
         
         v.layout { view in
-            view.leading 
+            view.left(20)
+            view.top.left.margin(20)
         }
     }
 

@@ -22,30 +22,47 @@
 
 import UIKit
 
-public protocol AttributeVariables{
-    var left: Self { get }
-    var right: Self { get }
-    var top: Self { get }
-    var bottom: Self { get }
-    var leading: Self { get }
-    var trailing: Self { get }
-    var width: Self { get }
-    var height: Self { get }
-    var centerX: Self { get }
-    var centerY: Self { get }
-    var lastBaseline: Self { get }
-}
-
-public protocol AttributeMethods{
-    func left(_ offset:Value) -> Self
-    func right(_ offset:Value) -> Self
-    func top(_ offset:Value) -> Self
-    func bottom(_ offset:Value) -> Self
-    func leading(_ offset:Value) -> Self
-    func trailing(_ offset:Value) -> Self
-    func width(_ offset:Value) -> Self
-    func height(_ offset:Value) -> Self
-    func centerX(_ offset:Value) -> Self
-    func centerY(_ offset:Value) -> Self
-    func lastBaseline(_ offset:Value) -> Self
+extension EKLayout: AttributeVariables {
+    public var left: EKLayout {
+        return self.prepareTempBuffer(.left)
+    }
+    public var right: EKLayout {
+        return self.prepareTempBuffer(.right)
+    }
+    
+    public var top: EKLayout {
+        return self.prepareTempBuffer(.top)
+    }
+    
+    public var bottom: EKLayout {
+        return self.prepareTempBuffer(.bottom)
+    }
+    
+    public var leading: EKLayout {
+        return self.prepareTempBuffer(.leading)
+    }
+    
+    public var trailing: EKLayout {
+        return self.prepareTempBuffer(.trailing)
+    }
+    
+    public var width: EKLayout {
+        return self.prepareTempBuffer(.width)
+    }
+    
+    public var height: EKLayout {
+        return self.prepareTempBuffer(.height)
+    }
+    
+    public var centerX: EKLayout {
+        return self.prepareTempBuffer(.centerX)
+    }
+    
+    public var centerY: EKLayout {
+        return self.prepareTempBuffer(.centerY)
+    }
+    
+    public var lastBaseline: EKLayout {
+        return self.prepareTempBuffer(.lastBaseline)
+    }
 }
