@@ -77,6 +77,23 @@ extension EKLayout:AttributeMethods {
     public func lastBaseline(_ offset: Value) -> EKLayout {
         return self.prepareTempBuffer(.lastBaseline).margin(offset)
     }
+}
+
+
+extension EKLayout {
+    func left(of relativeView: Layoutable, aligned: EKLayoutAttribute = .notAnAttribute ,  _ offset:Value = CGFloat(0)) -> Self {
+        return self
+    }
     
     
+    func right(of relativeView: Layoutable, aligned: EKLayoutAttribute = .notAnAttribute ,  _ offset:Value = CGFloat(0)) -> Self {
+        return self
+    }
+    func top(of relativeView: Layoutable, aligned: EKLayoutAttribute = .notAnAttribute ,  _ offset:Value = CGFloat(0)) -> Self {
+        return self
+    }
+    func bottom(of relativeView: Layoutable, aligned: EKLayoutAttribute = .notAnAttribute ,  _ offset:Value = CGFloat(0)) -> Self {
+        return self
+    }
+
 }
