@@ -37,9 +37,9 @@ public final class EKLayout {
         let layt = EKLayout(view: view)
         closure(layt)
     
-//        layt.repository.getProdConstraint().forEach {
-//            print($0)
-//        }
+        layt.repository.getProdConstraint().forEach {
+            print($0)
+        }
         print("layout activated")
     }
     
@@ -54,8 +54,8 @@ extension EKLayout {
     @discardableResult
     public func margin(_ value:Value)-> EKLayout {
         
-        guard let val = value as? Percent else {
-            self.repository.moveTempConstToProd(constant: value.toCGFloat)
+        guard let percent = value as? Percent else {
+            self.repository.moveTempConstToProdMult(constant: value.toCGFloat)
             return self
         }
         
@@ -64,27 +64,12 @@ extension EKLayout {
             let superViewRect = const.from.superviewRect() ?? screenSize
             
             if const.attribute == .top || const.attribute == .bottom {
-               const.value = val.of(superViewRect.height)
+               const.value = percent.of(superViewRect.height)
             } else if const.attribute == .left || const.attribute == .right {
-                const.value = val.of(superViewRect.width)
+                const.value = percent.of(superViewRect.width)
             }
-            self.repository.moveFromTempToProd(constant: const)
+            self.repository.moveFromTempToProdSingle(constant: const)
         }
         return self
     }
 }
-
-
-
-
-
-extension EKLayout {
-    // TODO: for fixing
-    @discardableResult
-    public func size(_ value:Value) -> EKLayout{
-//        self.width.value(value.toSize.width)
-//        self.height.value(value.toSize.height)
-        return self
-    }
-}
-
