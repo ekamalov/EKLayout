@@ -24,17 +24,14 @@ import UIKit
 
 public class Repository {
     private var layout:EKLayout
-    
-    
-    
+    private var temporaryConstraint = Set<Constraint>()
+    private var prodConstraint = Set<Constraint>()
     
     public init(layout:EKLayout) {
         self.layout = layout
     }
     
-    private var temporaryConstraint = Set<Constraint>()
-    private var prodConstraint = Set<Constraint>()
-    
+   
     internal func addTempConst(_ attribute:EKLayoutAttribute)  {
         let const = Constraint(item: layout.view, superView: layout.view.superview, attribute: attribute)
         if !temporaryConstraint.contains(const) {
@@ -49,36 +46,23 @@ public class Repository {
     }
     
     internal func moveTempConstToProd(constant value: CGFloat){
-
         self.temporaryConstraint.forEach { item in
-            if prodConstraint.contains(item) {
-                prodConstraint[prodConstraint.index(of: item)]
-            }
-        }
-
-
-        let tmp = temporaryConstraint.compactMap { (item) -> Constraint? in
             var const = item
             const.value = value
-            return const
+            if prodConstraint.contains(item) {
+                self.prodConstraint.update(with: const)
+            }
+            self.prodConstraint.insert(const)
         }
-//
-//        prodConstraint.insertOrUpdate(tmp)
-        let s = prodConstraint.intersection(tmp)
-        self.prodConstraint = prodConstraint.union(temporaryConstraint)
         removeAllTempConst()
+    }
     
-        //        let tmp = temporaryConstraint.compactMap { item in
-        //            var temp = item
-        //            temp.value = value
-        //            return temp
-        ////            Constraint.init(item: layout.view, attribute: $0.attribute, value: value, relation: .equal)
-        //
-        //        }
-        
-        //        prodConstraint.intersection(tmp)
-        //        prodConstraint.append(contentsOf: tmp)
-        //        removeAllTempConst()
+    internal func moveFromTempToProd(constant item:Constraint) {
+        if self.prodConstraint.contains(item) {
+            self.prodConstraint.update(with: item)
+        }
+        self.prodConstraint.insert(item)
+        self.temporaryConstraint.remove(item)
     }
     
     //    internal func addProdConst(_ constraints:Constraint...) {
@@ -97,23 +81,3 @@ public class Repository {
 }
 
 
-extension Set {
-    mutating func insert(_ newMembers: [Set.Element]) {
-        newMembers.forEach { (member) in
-            self.insert(member)
-        }
-    }
-    mutating func insertOrUpdate(_ newMembers:[Set.Element]){
-        newMembers.forEach { member in
-            if self.contains(member) {
-                 self.update(with: member)
-            } else {
-                self.insert(member)
-            }
-        }
-    }
-}
-
-extension Collection where Element == Constraint {
-    subscript(
-}

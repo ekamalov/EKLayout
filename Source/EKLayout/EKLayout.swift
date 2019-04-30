@@ -25,23 +25,21 @@ import UIKit
 
 public final class EKLayout {
     
-    internal var repository:Repository
     internal let view:Layoutable
+    internal lazy var repository = Repository(layout: self)
     
     internal init(view:Layoutable){
         self.view = view
         self.view.prepare()
-        
-        self.repository = Repository()
     }
     
     internal static func activateLayout(view:Layoutable,closure:EKLayoutBuilderClosure)  {
         let layt = EKLayout(view: view)
         closure(layt)
-        
-        layt.repository.getProdConstraint().forEach {
-            print(String(reflecting:$0.attribute),$0.value)
-        }
+    
+//        layt.repository.getProdConstraint().forEach {
+//            print($0)
+//        }
         print("layout activated")
     }
     
@@ -62,18 +60,19 @@ extension EKLayout {
         }
         
         guard let superViewRect = self.view.superviewRect() else { return self }
-        var calcPercent:CGFloat = 0
+        
         repository.getTempConstraint().forEach {
-            switch $0.attribute {
+            var const:Constraint = $0
+            switch const.attribute {
             case .top, .bottom:
-                calcPercent = val.of(superViewRect.height)
+                const.value = val.of(superViewRect.height)
             case .left, .right:
-                calcPercent = val.of(superViewRect.width)
+                const.value = val.of(superViewRect.width)
             default:
                 break
             }
+            self.repository.moveFromTempToProd(constant: const)
         }
-        self.repository.moveTempConstToProd(constant: calcPercent)
         return self
     }
 }
@@ -90,9 +89,4 @@ extension EKLayout {
 //        return self.constraint
 //    }
 //}
-//
-//extension EKLayout: AttributeMethods {
-//    public func top(_ offset: Value) -> Test {
-//        return self.constraint
-//    }
-//}
+
