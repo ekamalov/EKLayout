@@ -22,6 +22,8 @@
 
 import UIKit
 
+
+// MARK: - Variables
 extension EKLayout: AttributeVariables {
     public var left: EKLayout {
         return self.prepareTempBuffer(.left)
@@ -64,5 +66,64 @@ extension EKLayout: AttributeVariables {
     
     public var lastBaseline: EKLayout {
         return self.prepareTempBuffer(.lastBaseline)
+    }
+}
+
+
+// MARK: - Methods
+extension EKLayout:AttributeMethods {
+    @discardableResult
+    public func left(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.left).margin(offset)
+    }
+    
+    @discardableResult
+    public func right(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.right).margin(offset)
+    }
+    
+    @discardableResult
+    public func top(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.top).margin(offset)
+    }
+    
+    @discardableResult
+    public func bottom(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.bottom).margin(offset)
+    }
+    
+    @discardableResult
+    public func leading(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.leading).margin(offset)
+    }
+    
+    @discardableResult
+    public func trailing(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.trailing).margin(offset)
+    }
+    
+    @discardableResult
+    public func width(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.width).margin(offset)
+    }
+    
+    @discardableResult
+    public func height(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.height).margin(offset)
+    }
+    
+    @discardableResult
+    public func centerX(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.centerX).margin(offset)
+    }
+    
+    @discardableResult
+    public func centerY(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.centerY).margin(offset)
+    }
+    
+    @discardableResult
+    public func lastBaseline(_ offset: Value) -> EKLayout {
+        return self.prepareTempBuffer(.lastBaseline).margin(offset)
     }
 }
