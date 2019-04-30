@@ -35,9 +35,6 @@ extension CGFloat: Value {}
 
 extension Percent: Value {}
 
-extension CGSize: Value {}
-
-extension CGPoint: Value {}
 
 
 extension Value {
@@ -49,18 +46,10 @@ extension Value {
         case let value as Float: return CGFloat(value)
         case let value as Int: return CGFloat(value)
         default:
-            assert(false, "NumberConvertible convert cast failed!")
+            assert(false, "NumberConvertible convert cast failed! Please check Percent")
             return 0
         }
     }
-    
-    var toSize: CGSize {
-        switch self {
-        case let value as CGSize: return value
-        default: return CGSize(width: toCGFloat, height: toCGFloat)
-        }
-    }
-    
 }
 
 

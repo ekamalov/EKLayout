@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459EAAE9227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
+		459EAAEA227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
+		459EAAEB227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
+		459EAAED227845DC00796EA9 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
+		459EAAEE227845DC00796EA9 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
+		459EAAEF227845DC00796EA9 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
 		45A04BA82266F8D200AE6E23 /* EKLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A04B9E2266F8D200AE6E23 /* EKLayout.framework */; };
 		45A04BAD2266F8D200AE6E23 /* EKLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BAC2266F8D200AE6E23 /* EKLayoutTests.swift */; };
 		45A04BAF2266F8D200AE6E23 /* EKLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 45A04BA12266F8D200AE6E23 /* EKLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,12 +48,9 @@
 		45A04BF52266FB3E00AE6E23 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
 		45A04BF62266FB3E00AE6E23 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
 		45A04BF72266FB3E00AE6E23 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
-		45A04C222276D51600AE6E23 /* EKLayout+Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Variables.swift */; };
-		45A04C232276D51600AE6E23 /* EKLayout+Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Variables.swift */; };
-		45A04C242276D51600AE6E23 /* EKLayout+Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Variables.swift */; };
-		45A04C262276D52D00AE6E23 /* EKLayout+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C252276D52D00AE6E23 /* EKLayout+Methods.swift */; };
-		45A04C272276D52D00AE6E23 /* EKLayout+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C252276D52D00AE6E23 /* EKLayout+Methods.swift */; };
-		45A04C282276D52D00AE6E23 /* EKLayout+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C252276D52D00AE6E23 /* EKLayout+Methods.swift */; };
+		45A04C222276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
+		45A04C232276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
+		45A04C242276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKLayout+Relative.swift"; sourceTree = "<group>"; };
+		459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKLayout+Size.swift"; sourceTree = "<group>"; };
 		45A04B9E2266F8D200AE6E23 /* EKLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EKLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A04BA12266F8D200AE6E23 /* EKLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKLayout.h; sourceTree = "<group>"; };
 		45A04BA22266F8D200AE6E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,8 +88,7 @@
 		45A04BD92266FB3E00AE6E23 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		45A04BDA2266FB3E00AE6E23 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKLayout.swift; sourceTree = "<group>"; };
-		45A04C212276D51600AE6E23 /* EKLayout+Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKLayout+Variables.swift"; sourceTree = "<group>"; };
-		45A04C252276D52D00AE6E23 /* EKLayout+Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKLayout+Methods.swift"; sourceTree = "<group>"; };
+		45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKLayout+Attribute.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,13 +159,14 @@
 		45A04BBA2266F90700AE6E23 /* EKLayout */ = {
 			isa = PBXGroup;
 			children = (
+				45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */,
 				45A04BD12266FB3E00AE6E23 /* Protocols */,
 				45A04BD82266FB3E00AE6E23 /* Models */,
 				45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */,
-				45A04C212276D51600AE6E23 /* EKLayout+Variables.swift */,
-				45A04C252276D52D00AE6E23 /* EKLayout+Methods.swift */,
+				45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */,
+				459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */,
+				459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */,
 				45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */,
-				45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */,
 			);
 			path = EKLayout;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				45A04B9A2266F8D200AE6E23 /* Sources */,
 				45A04B9B2266F8D200AE6E23 /* Frameworks */,
 				45A04B9C2266F8D200AE6E23 /* Resources */,
+				459EAAE722783DD600796EA9 /* Xcode notes */,
 			);
 			buildRules = (
 			);
@@ -335,22 +341,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		459EAAE722783DD600796EA9 /* Xcode notes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Xcode notes";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:|WARNING:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"| perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		45A04B9A2266F8D200AE6E23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				45A04BF22266FB3E00AE6E23 /* Constraint.swift in Sources */,
+				459EAAED227845DC00796EA9 /* EKLayout+Size.swift in Sources */,
 				45A04BE32266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BDD2266FB3E00AE6E23 /* Layoutable.swift in Sources */,
+				459EAAE9227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
 				45A04BF52266FB3E00AE6E23 /* EKLayout.swift in Sources */,
 				45A04BE62266FB3E00AE6E23 /* Attribute.swift in Sources */,
 				45A04BEC2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
 				45A04BE02266FB3E00AE6E23 /* Value.swift in Sources */,
 				45A04BE92266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
 				45A04BEF2266FB3E00AE6E23 /* Typealias.swift in Sources */,
-				45A04C262276D52D00AE6E23 /* EKLayout+Methods.swift in Sources */,
-				45A04C222276D51600AE6E23 /* EKLayout+Variables.swift in Sources */,
+				45A04C222276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,15 +387,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A04BF32266FB3E00AE6E23 /* Constraint.swift in Sources */,
-				45A04C232276D51600AE6E23 /* EKLayout+Variables.swift in Sources */,
+				45A04C232276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */,
 				45A04BED2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
 				45A04BE72266FB3E00AE6E23 /* Attribute.swift in Sources */,
+				459EAAEE227845DC00796EA9 /* EKLayout+Size.swift in Sources */,
+				459EAAEA227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
 				45A04BE12266FB3E00AE6E23 /* Value.swift in Sources */,
 				45A04BEA2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
 				45A04BE42266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BAD2266F8D200AE6E23 /* EKLayoutTests.swift in Sources */,
 				45A04BF02266FB3E00AE6E23 /* Typealias.swift in Sources */,
-				45A04C272276D52D00AE6E23 /* EKLayout+Methods.swift in Sources */,
 				45A04BDE2266FB3E00AE6E23 /* Layoutable.swift in Sources */,
 				45A04BF62266FB3E00AE6E23 /* EKLayout.swift in Sources */,
 			);
@@ -379,11 +408,12 @@
 			files = (
 				45A04BE82266FB3E00AE6E23 /* Attribute.swift in Sources */,
 				45A04BF12266FB3E00AE6E23 /* Typealias.swift in Sources */,
-				45A04C282276D52D00AE6E23 /* EKLayout+Methods.swift in Sources */,
+				459EAAEF227845DC00796EA9 /* EKLayout+Size.swift in Sources */,
 				45A04BDF2266FB3E00AE6E23 /* Layoutable.swift in Sources */,
 				45A04BC42266FAD900AE6E23 /* ViewController.swift in Sources */,
+				459EAAEB227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
 				45A04BC22266FAD900AE6E23 /* AppDelegate.swift in Sources */,
-				45A04C242276D51600AE6E23 /* EKLayout+Variables.swift in Sources */,
+				45A04C242276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */,
 				45A04BE52266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BEE2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
 				45A04BEB2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
