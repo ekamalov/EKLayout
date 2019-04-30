@@ -59,17 +59,14 @@ extension EKLayout {
             return self
         }
         
-        guard let superViewRect = self.view.superviewRect() else { return self }
-        
         repository.getTempConstraint().forEach {
             var const:Constraint = $0
-            switch const.attribute {
-            case .top, .bottom:
-                const.value = val.of(superViewRect.height)
-            case .left, .right:
+            let superViewRect = const.from.superviewRect() ?? screenSize
+            
+            if const.attribute == .top || const.attribute == .bottom {
+               const.value = val.of(superViewRect.height)
+            } else if const.attribute == .left || const.attribute == .right {
                 const.value = val.of(superViewRect.width)
-            default:
-                break
             }
             self.repository.moveFromTempToProd(constant: const)
         }
@@ -81,12 +78,13 @@ extension EKLayout {
 
 
 
-//extension EKLayout {
-//    @discardableResult
-//    public func size(_ value:Value) -> classType{
+extension EKLayout {
+    // TODO: for fixing
+    @discardableResult
+    public func size(_ value:Value) -> EKLayout{
 //        self.width.value(value.toSize.width)
 //        self.height.value(value.toSize.height)
-//        return self.constraint
-//    }
-//}
+        return self
+    }
+}
 
