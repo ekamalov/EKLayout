@@ -31,21 +31,15 @@ public class Repository {
         self.layout = layout
     }
     
-   
     internal func addTempConst(_ attribute:EKLayoutAttribute)  {
         let const = Constraint(item: layout.view, superView: layout.view.superview, attribute: attribute)
-        if !temporaryConstraint.contains(const) {
-            self.temporaryConstraint.insert(const)
-        }else {
+        if temporaryConstraint.contains(const) {
             self.temporaryConstraint.update(with: const)
         }
+        self.temporaryConstraint.insert(const)
     }
     
-    internal func removeAllTempConst(){
-        self.temporaryConstraint.removeAll()
-    }
-    
-    internal func moveTempConstToProd(constant value: CGFloat){
+    internal func moveTempConstToProdMult(constant value: CGFloat){
         self.temporaryConstraint.forEach { item in
             var const = item
             const.value = value
@@ -53,22 +47,17 @@ public class Repository {
                 self.prodConstraint.update(with: const)
             }
             self.prodConstraint.insert(const)
+            self.temporaryConstraint.remove(item)
         }
-        removeAllTempConst()
     }
     
-    internal func moveFromTempToProd(constant item:Constraint) {
+    internal func moveFromTempToProdSingle(constant item:Constraint) {
         if self.prodConstraint.contains(item) {
             self.prodConstraint.update(with: item)
         }
         self.prodConstraint.insert(item)
         self.temporaryConstraint.remove(item)
     }
-    
-    //    internal func addProdConst(_ constraints:Constraint...) {
-    //        prodConstraint.append(contentsOf: constraints)
-    //        removeAllTempConst()
-    //    }
     
     
     internal func getProdConstraint()-> Set<Constraint> {
