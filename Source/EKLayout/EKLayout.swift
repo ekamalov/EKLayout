@@ -50,30 +50,6 @@ public final class EKLayout {
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 extension EKLayout {
     internal func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> EKLayout {
         self.repository.addTempConst(attribute)

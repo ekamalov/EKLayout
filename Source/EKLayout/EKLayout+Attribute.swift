@@ -56,52 +56,56 @@ extension EKLayout: AttributeVariables {
         return self.prepareTempBuffer(.height)
     }
     
-    public var lastBaseline: EKLayout {
-        return self.prepareTempBuffer(.lastBaseline)
-    }
 }
 
 
 // MARK: - Methods
 extension EKLayout:AttributeMethods {
+    public func equalToSuperview() {
+        if self.view.superview == nil {
+            fatalError("Expected superview but found nil when attempting make constraint `equalToSuperview`.")
+        }
+        self.left.right.top.bottom.margin(0)
+    }
+    
     @discardableResult
     public func left(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.left).margin(offset)
+        return self.left.margin(offset)
     }
     
     @discardableResult
     public func right(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.right).margin(offset)
+        return self.right.margin(offset)
     }
     
     @discardableResult
     public func top(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.top).margin(offset)
+        return self.top.margin(offset)
     }
     
     @discardableResult
     public func bottom(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.bottom).margin(offset)
+        return self.bottom.margin(offset)
     }
     
     @discardableResult
     public func leading(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.leading).margin(offset)
+        return self.leading.margin(offset)
     }
     
     @discardableResult
     public func trailing(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.trailing).margin(offset)
+        return self.trailing.margin(offset)
     }
     
     @discardableResult
     public func width(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.width).margin(offset)
+        return self.width.margin(offset)
     }
     
     @discardableResult
     public func height(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.height).margin(offset)
+        return self.height.margin(offset)
     }
     
     @discardableResult
@@ -114,8 +118,4 @@ extension EKLayout:AttributeMethods {
         return self.prepareTempBuffer(.centerY).margin(offset)
     }
     
-    @discardableResult
-    public func lastBaseline(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.lastBaseline).margin(offset)
-    }
 }

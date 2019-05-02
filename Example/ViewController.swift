@@ -23,8 +23,14 @@ class ViewController: UIViewController {
         
        
         v.layout { view in
-            view.size(width: 100, height: 100)
-            view.centerX(20).centerY(210)
+            
+            view.equalToSuperview()
+            
+//            view.size(width: 100, height: 100)
+//            view.centerX(20).centerY(210)
+            
+            
+            
 //            view.size(width: 50%, height: 10%)
 
 //            view.top.left.margin(20)
