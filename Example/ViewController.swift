@@ -17,27 +17,26 @@ class ViewController: UIViewController {
         let v = UIView.init(frame: .init(x: 20, y: 200, width: 100, height: 100))
         v.backgroundColor = .red
         
+        let v1 = UIView()
+        v1.backgroundColor = .green
+        
+        
         UIView.transition(with: self.view, duration: 0.5, options: [.transitionCrossDissolve], animations: {
             self.view.addSubview(v)
+            self.view.addSubview(v1)
         }, completion: nil)
         
-       
-        v.layout { view in
-            
-            view.equalToSuperview()
-            
+        
+//        v.layout { view in
 //            view.size(width: 100, height: 100)
-//            view.centerX(20).centerY(210)
-            
-            
-            
-//            view.size(width: 50%, height: 10%)
-
-//            view.top.left.margin(20)
-//            view.top.margin(50).left.bottom.margin(15)
-//            view.right.top.margin(10%).bottom(20%)
-           
+//            view.centerX(20).top(100)
+//        }
+        
+        v1.layout {
+            $0.all(45%)
         }
+       
+        
         print(v.frame)
     }
 
