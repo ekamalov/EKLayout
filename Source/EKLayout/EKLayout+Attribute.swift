@@ -61,13 +61,7 @@ extension EKLayout: AttributeVariables {
 
 // MARK: - Methods
 extension EKLayout:AttributeMethods {
-    public func equalToSuperview() {
-        if self.view.superview == nil {
-            fatalError("Expected superview but found nil when attempting make constraint `equalToSuperview`.")
-        }
-        self.left.right.top.bottom.margin(0)
-    }
-    
+
     @discardableResult
     public func left(_ offset: Value) -> EKLayout {
         return self.left.margin(offset)
@@ -118,4 +112,14 @@ extension EKLayout:AttributeMethods {
         return self.prepareTempBuffer(.centerY).margin(offset)
     }
     
+    public func equalToSuperView() {
+        if self.view.superview == nil {
+            fatalError("Expected superview but found nil when attempting make constraint `equalToSuperview`.")
+        }
+        self.left.right.top.bottom.margin(0)
+    }
+    
+    public func all(_ offset: Value){
+        self.left.right.top.bottom.margin(offset)
+    }
 }
