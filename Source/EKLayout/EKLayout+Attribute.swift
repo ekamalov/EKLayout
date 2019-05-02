@@ -56,14 +56,6 @@ extension EKLayout: AttributeVariables {
         return self.prepareTempBuffer(.height)
     }
     
-    public var centerX: EKLayout {
-        return self.prepareTempBuffer(.centerX)
-    }
-    
-    public var centerY: EKLayout {
-        return self.prepareTempBuffer(.centerY)
-    }
-    
     public var lastBaseline: EKLayout {
         return self.prepareTempBuffer(.lastBaseline)
     }
@@ -113,12 +105,12 @@ extension EKLayout:AttributeMethods {
     }
     
     @discardableResult
-    public func centerX(_ offset: Value) -> EKLayout {
+    public func centerX(_ offset: Value = 0) -> EKLayout {
         return self.prepareTempBuffer(.centerX).margin(offset)
     }
     
     @discardableResult
-    public func centerY(_ offset: Value) -> EKLayout {
+    public func centerY(_ offset: Value = 0) -> EKLayout {
         return self.prepareTempBuffer(.centerY).margin(offset)
     }
     
