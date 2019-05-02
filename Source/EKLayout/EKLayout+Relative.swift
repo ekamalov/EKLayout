@@ -26,34 +26,34 @@ extension EKLayout {
     // MARK: - Public methods
     @discardableResult
     func left(of relativeView: Layoutable, aligned: EKLayoutAttribute = .left ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
-        self.addRelativeConstraint(newViewAttribute: .left, of: relativeView, aligned: aligned, offset, relation: relation)
+        self.addRelativeConstraint(.left, of: relativeView, aligned: aligned, offset.toCGFloat, relation: relation)
         return self
     }
     
     @discardableResult
     func right(of relativeView: Layoutable, aligned: EKLayoutAttribute = .right ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
-        self.addRelativeConstraint(newViewAttribute: .right, of: relativeView, aligned: aligned, offset, relation: relation)
+        self.addRelativeConstraint(.right, of: relativeView, aligned: aligned, -offset.toCGFloat, relation: relation)
         return self
     }
     
     @discardableResult
     func top(of relativeView: Layoutable, aligned: EKLayoutAttribute = .top ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
-        self.addRelativeConstraint(newViewAttribute: .top, of: relativeView, aligned: aligned, offset, relation: relation)
+        self.addRelativeConstraint(.top, of: relativeView, aligned: aligned, offset.toCGFloat, relation: relation)
         return self
     }
     
     @discardableResult
     func bottom(of relativeView: Layoutable, aligned: EKLayoutAttribute = .bottom ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
-        self.addRelativeConstraint(newViewAttribute: .bottom, of: relativeView, aligned: aligned, offset, relation: relation)
+        self.addRelativeConstraint(.bottom, of: relativeView, aligned: aligned, -offset.toCGFloat, relation: relation)
         return self
     }
     
     
     // MARK: - Private methods
-    private func addRelativeConstraint(newViewAttribute: EKLayoutAttribute, of relativeView: Layoutable,
-                                       aligned: EKLayoutAttribute = .notAnAttribute ,  _ offset:Value = 0, relation: EKLayoutRelation){
+    private func addRelativeConstraint(_ newViewAttribute: EKLayoutAttribute, of relativeView: Layoutable,
+                                       aligned: EKLayoutAttribute = .notAnAttribute ,  _ offset:CGFloat, relation: EKLayoutRelation){
         let const = Constraint(newView: self.view, newViewAttribute: newViewAttribute, relativeView: relativeView,
-                               relativeAttribute: aligned, value: offset.toCGFloat, relation: relation)
+                               relativeAttribute: aligned, value: offset, relation: relation)
         self.repository.addProdConst(constraint: const)
     }
 }
