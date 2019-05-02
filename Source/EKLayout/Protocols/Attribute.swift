@@ -31,8 +31,6 @@ public protocol AttributeVariables{
     var trailing: Self { get }
     var width: Self { get }
     var height: Self { get }
-    var centerX: Self { get }
-    var centerY: Self { get }
     var lastBaseline: Self { get }
 }
 
