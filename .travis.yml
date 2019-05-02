@@ -14,5 +14,5 @@ install:
 
 script:
     - set -o pipefail
-    - xcodebuild clean build test -project "$PROJECT" -scheme "$SCHEME" -destination "OS=12.0,name=iPhone X" -configuration Debug | xcpretty
+    - xcodebuild clean build test -project "$PROJECT" -scheme "$SCHEME" -destination "OS=12.2,name=iPhone X" -configuration Debug | xcpretty
     - bash <(curl -s https://codecov.io/bash) -J 'EKLayout'
