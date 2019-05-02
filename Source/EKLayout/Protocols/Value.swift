@@ -53,5 +53,21 @@ extension Value {
 }
 
 
+/// This struct used for calculating percent
+public struct Percent {
+    let value: CGFloat
+    
+    public func of(_ value: CGFloat) -> CGFloat {
+        return value * self.value / 100
+    }
+}
+
+postfix operator %
+
+public postfix func % (v: CGFloat) -> Percent {
+    return Percent(value: v)
+}
+
+
 
 

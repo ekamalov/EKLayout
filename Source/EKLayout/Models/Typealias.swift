@@ -24,9 +24,9 @@ import UIKit
 
 public typealias EKLayoutBuilderClosure = (_ attributes: EKLayout) -> Void
 
-
-public typealias EKLayoutAttribute = NSLayoutConstraint.Attribute
-public typealias EKLayoutRelation = NSLayoutConstraint.Relation
+public typealias EKLayoutConstraint = NSLayoutConstraint
+public typealias EKLayoutAttribute = EKLayoutConstraint.Attribute
+public typealias EKLayoutRelation = EKLayoutConstraint.Relation
 
 
 public typealias EKLayoutableView = UIView

@@ -25,14 +25,15 @@ class ViewController: UIViewController {
         
        
         v.layout { view in
-//            view.left(20)
+            view.left(10).bottom(10)
+            view.size(width: 50%, height: 10%)
+
 //            view.top.left.margin(20)
 //            view.top.margin(50).left.bottom.margin(15)
-            
-            view.size(10%, 100%)
 //            view.right.top.margin(10%).bottom(20%)
            
         }
+        print(v.frame)
     }
 
 

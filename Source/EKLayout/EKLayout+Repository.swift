@@ -32,7 +32,13 @@ public class Repository {
     }
     
     internal func addTempConst(_ attribute:EKLayoutAttribute)  {
-        let const = Constraint(item: layout.view, superView: layout.view.superview, attribute: attribute)
+        var const:Constraint
+        if attribute == .width || attribute == .height {
+            const = Constraint(newView: layout.view, newViewAttribute: attribute)
+        }else {
+            const = Constraint(newView: layout.view, newViewAttribute: attribute, relativeView: layout.view.superview, relativeAttribute: attribute)
+        }
+        
         if temporaryConstraint.contains(const) {
             self.temporaryConstraint.update(with: const)
         }
@@ -42,7 +48,7 @@ public class Repository {
     internal func moveTempConstToProdMult(constant value: CGFloat){
         self.temporaryConstraint.forEach { item in
             var const = item
-            const.value = value
+            const.value = item.newViewAttribute == .right || item.newViewAttribute == .bottom ? -value : value
             if prodConstraint.contains(item) {
                 self.prodConstraint.update(with: const)
             }

@@ -27,11 +27,11 @@
     
     @discardableResult
     public func size(_ value:Value) -> EKLayout{
-        return self.size(value, value)
+        return self.size(width: value, height: value)
     }
     
     @discardableResult
-    public func size(_ width:Value, _ height:Value) -> EKLayout {
+    public func size(width:Value, height:Value) -> EKLayout {
 
         let superViewRect = self.view.superviewRect() ?? screenSize
         

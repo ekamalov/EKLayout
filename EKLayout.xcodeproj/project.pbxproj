@@ -27,9 +27,6 @@
 		45A04BE02266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
 		45A04BE12266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
 		45A04BE22266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
-		45A04BE32266FB3E00AE6E23 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD42266FB3E00AE6E23 /* Percent.swift */; };
-		45A04BE42266FB3E00AE6E23 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD42266FB3E00AE6E23 /* Percent.swift */; };
-		45A04BE52266FB3E00AE6E23 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD42266FB3E00AE6E23 /* Percent.swift */; };
 		45A04BE62266FB3E00AE6E23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
 		45A04BE72266FB3E00AE6E23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
 		45A04BE82266FB3E00AE6E23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
@@ -81,7 +78,6 @@
 		45A04BCD2266FADA00AE6E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A04BD22266FB3E00AE6E23 /* Layoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
 		45A04BD32266FB3E00AE6E23 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
-		45A04BD42266FB3E00AE6E23 /* Percent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Percent.swift; sourceTree = "<group>"; };
 		45A04BD52266FB3E00AE6E23 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EKLayout+Repository.swift"; sourceTree = "<group>"; };
@@ -190,7 +186,6 @@
 				45A04BD52266FB3E00AE6E23 /* Attribute.swift */,
 				45A04BD22266FB3E00AE6E23 /* Layoutable.swift */,
 				45A04BD32266FB3E00AE6E23 /* Value.swift */,
-				45A04BD42266FB3E00AE6E23 /* Percent.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -369,7 +364,6 @@
 			files = (
 				45A04BF22266FB3E00AE6E23 /* Constraint.swift in Sources */,
 				459EAAED227845DC00796EA9 /* EKLayout+Size.swift in Sources */,
-				45A04BE32266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BDD2266FB3E00AE6E23 /* Layoutable.swift in Sources */,
 				459EAAE9227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
 				45A04BF52266FB3E00AE6E23 /* EKLayout.swift in Sources */,
@@ -394,7 +388,6 @@
 				459EAAEA227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
 				45A04BE12266FB3E00AE6E23 /* Value.swift in Sources */,
 				45A04BEA2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
-				45A04BE42266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BAD2266F8D200AE6E23 /* EKLayoutTests.swift in Sources */,
 				45A04BF02266FB3E00AE6E23 /* Typealias.swift in Sources */,
 				45A04BDE2266FB3E00AE6E23 /* Layoutable.swift in Sources */,
@@ -414,7 +407,6 @@
 				459EAAEB227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
 				45A04BC22266FAD900AE6E23 /* AppDelegate.swift in Sources */,
 				45A04C242276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */,
-				45A04BE52266FB3E00AE6E23 /* Percent.swift in Sources */,
 				45A04BEE2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
 				45A04BEB2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
 				45A04BF72266FB3E00AE6E23 /* EKLayout.swift in Sources */,
