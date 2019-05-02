@@ -31,6 +31,30 @@ public class Repository {
         self.layout = layout
     }
     
+    internal func moveTempConstToProdMult(constant value: CGFloat){
+        self.temporaryConstraint.forEach { item in
+            var const = item
+            const.value = item.newViewAttribute == .right || item.newViewAttribute == .bottom ? -value : value
+            if prodConstraint.contains(item) {
+                self.prodConstraint.update(with: const)
+            }
+            self.prodConstraint.insert(const)
+            self.temporaryConstraint.remove(item)
+        }
+    }
+    
+    internal func moveFromTempToProdSingle(constraint item:Constraint) {
+        self.addProdConst(constraint: item)
+        self.temporaryConstraint.remove(item)
+    }
+    
+    internal func addProdConst(constraint item:Constraint) {
+        if self.prodConstraint.contains(item) {
+            self.prodConstraint.update(with: item)
+        }
+        self.prodConstraint.insert(item)
+    }
+    
     internal func addTempConst(_ attribute:EKLayoutAttribute)  {
         var const:Constraint
         if attribute == .width || attribute == .height {
@@ -44,27 +68,6 @@ public class Repository {
         }
         self.temporaryConstraint.insert(const)
     }
-    
-    internal func moveTempConstToProdMult(constant value: CGFloat){
-        self.temporaryConstraint.forEach { item in
-            var const = item
-            const.value = item.newViewAttribute == .right || item.newViewAttribute == .bottom ? -value : value
-            if prodConstraint.contains(item) {
-                self.prodConstraint.update(with: const)
-            }
-            self.prodConstraint.insert(const)
-            self.temporaryConstraint.remove(item)
-        }
-    }
-    
-    internal func moveFromTempToProdSingle(constant item:Constraint) {
-        if self.prodConstraint.contains(item) {
-            self.prodConstraint.update(with: item)
-        }
-        self.prodConstraint.insert(item)
-        self.temporaryConstraint.remove(item)
-    }
-    
     
     internal func getProdConstraint()-> Set<Constraint> {
         return self.prodConstraint
