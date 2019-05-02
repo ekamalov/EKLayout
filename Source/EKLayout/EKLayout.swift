@@ -51,7 +51,7 @@ public final class EKLayout {
 }
 
 extension EKLayout {
-    internal func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> EKLayout {
+    internal func addConst(_ attribute: EKLayoutAttribute) -> EKLayout {
         self.repository.addTempConst(attribute)
         return self
     }
@@ -75,7 +75,7 @@ extension EKLayout {
             }
             
             const.value = const.newViewAttribute == .right || const.newViewAttribute == .bottom ? -const.value : const.value
-            self.repository.moveFromTempToProdSingle(constant: const)
+            self.repository.moveFromTempToProdSingle(constraint: const)
         }
         return self
     }

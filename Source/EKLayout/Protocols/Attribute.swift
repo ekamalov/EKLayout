@@ -44,6 +44,7 @@ public protocol AttributeMethods{
     func height(_ offset:Value) -> Self
     func centerX(_ offset:Value) -> Self
     func centerY(_ offset:Value) -> Self
-    func equalToSuperview()
+    func equalToSuperView()
+    func all(_ offset: Value)
 }
 

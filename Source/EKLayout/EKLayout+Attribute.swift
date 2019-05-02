@@ -26,34 +26,34 @@ import UIKit
 // MARK: - Variables
 extension EKLayout: AttributeVariables {
     public var left: EKLayout {
-        return self.prepareTempBuffer(.left)
+        return self.addConst(.left)
     }
     public var right: EKLayout {
-        return self.prepareTempBuffer(.right)
+        return self.addConst(.right)
     }
     
     public var top: EKLayout {
-        return self.prepareTempBuffer(.top)
+        return self.addConst(.top)
     }
     
     public var bottom: EKLayout {
-        return self.prepareTempBuffer(.bottom)
+        return self.addConst(.bottom)
     }
     
     public var leading: EKLayout {
-        return self.prepareTempBuffer(.leading)
+        return self.addConst(.leading)
     }
     
     public var trailing: EKLayout {
-        return self.prepareTempBuffer(.trailing)
+        return self.addConst(.trailing)
     }
     
     public var width: EKLayout {
-        return self.prepareTempBuffer(.width)
+        return self.addConst(.width)
     }
     
     public var height: EKLayout {
-        return self.prepareTempBuffer(.height)
+        return self.addConst(.height)
     }
     
 }
@@ -104,12 +104,12 @@ extension EKLayout:AttributeMethods {
     
     @discardableResult
     public func centerX(_ offset: Value = 0) -> EKLayout {
-        return self.prepareTempBuffer(.centerX).margin(offset)
+        return self.addConst(.centerX).margin(offset)
     }
     
     @discardableResult
     public func centerY(_ offset: Value = 0) -> EKLayout {
-        return self.prepareTempBuffer(.centerY).margin(offset)
+        return self.addConst(.centerY).margin(offset)
     }
     
     public func equalToSuperView() {
