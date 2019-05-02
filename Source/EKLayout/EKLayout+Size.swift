@@ -27,19 +27,19 @@
     
     @discardableResult
     public func size(_ value:Value) -> EKLayout{
-        return self.size(value, value)
+        return self.size(width: value, height: value)
     }
     
     @discardableResult
-    public func size(_ width:Value, _ height:Value) -> EKLayout {
+    public func size(width:Value, height:Value) -> EKLayout {
 
         let superViewRect = self.view.superviewRect() ?? screenSize
         
         let _width = width is Percent ? (width as! Percent).of(superViewRect.width)
-            : width.toCGFloat
+                                      : width.toCGFloat
         
         let _height = height is Percent ? (height as! Percent).of(superViewRect.height)
-            : height.toCGFloat
+                                        : height.toCGFloat
         
         self.width.margin(_width)
         self.height.margin(_height)

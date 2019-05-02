@@ -26,104 +26,100 @@ import UIKit
 // MARK: - Variables
 extension EKLayout: AttributeVariables {
     public var left: EKLayout {
-        return self.prepareTempBuffer(.left)
+        return self.addConst(.left)
     }
     public var right: EKLayout {
-        return self.prepareTempBuffer(.right)
+        return self.addConst(.right)
     }
     
     public var top: EKLayout {
-        return self.prepareTempBuffer(.top)
+        return self.addConst(.top)
     }
     
     public var bottom: EKLayout {
-        return self.prepareTempBuffer(.bottom)
+        return self.addConst(.bottom)
     }
     
     public var leading: EKLayout {
-        return self.prepareTempBuffer(.leading)
+        return self.addConst(.leading)
     }
     
     public var trailing: EKLayout {
-        return self.prepareTempBuffer(.trailing)
+        return self.addConst(.trailing)
     }
     
     public var width: EKLayout {
-        return self.prepareTempBuffer(.width)
+        return self.addConst(.width)
     }
     
     public var height: EKLayout {
-        return self.prepareTempBuffer(.height)
+        return self.addConst(.height)
     }
     
-    public var centerX: EKLayout {
-        return self.prepareTempBuffer(.centerX)
-    }
-    
-    public var centerY: EKLayout {
-        return self.prepareTempBuffer(.centerY)
-    }
-    
-    public var lastBaseline: EKLayout {
-        return self.prepareTempBuffer(.lastBaseline)
-    }
 }
 
 
 // MARK: - Methods
 extension EKLayout:AttributeMethods {
+
     @discardableResult
     public func left(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.left).margin(offset)
+        return self.left.margin(offset)
     }
     
     @discardableResult
     public func right(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.right).margin(offset)
+        return self.right.margin(offset)
     }
     
     @discardableResult
     public func top(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.top).margin(offset)
+        return self.top.margin(offset)
     }
     
     @discardableResult
     public func bottom(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.bottom).margin(offset)
+        return self.bottom.margin(offset)
     }
     
     @discardableResult
     public func leading(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.leading).margin(offset)
+        return self.leading.margin(offset)
     }
     
     @discardableResult
     public func trailing(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.trailing).margin(offset)
+        return self.trailing.margin(offset)
     }
     
     @discardableResult
     public func width(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.width).margin(offset)
+        return self.width.margin(offset)
     }
     
     @discardableResult
     public func height(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.height).margin(offset)
+        return self.height.margin(offset)
     }
     
     @discardableResult
-    public func centerX(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.centerX).margin(offset)
+    public func centerX(_ offset: Value = 0) -> EKLayout {
+        return self.addConst(.centerX).margin(offset)
     }
     
     @discardableResult
-    public func centerY(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.centerY).margin(offset)
+    public func centerY(_ offset: Value = 0) -> EKLayout {
+        return self.addConst(.centerY).margin(offset)
     }
     
-    @discardableResult
-    public func lastBaseline(_ offset: Value) -> EKLayout {
-        return self.prepareTempBuffer(.lastBaseline).margin(offset)
+    public func equalToSuperView() {
+        if self.view.superview == nil {
+            fatalError("Expected superview but found nil when attempting make constraint `equalToSuperview`.")
+        }
+        self.left.right.top.bottom.margin(0)
+    }
+    
+    public func all(_ offset: Value){
+        self.left.right.top.bottom.margin(offset)
     }
 }

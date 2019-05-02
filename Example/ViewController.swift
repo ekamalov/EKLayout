@@ -14,8 +14,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
-        
         let v = UIView.init(frame: .init(x: 20, y: 200, width: 100, height: 100))
         v.backgroundColor = .red
         
@@ -25,14 +23,22 @@ class ViewController: UIViewController {
         
        
         v.layout { view in
-//            view.left(20)
+            
+            view.equalToSuperview()
+            
+//            view.size(width: 100, height: 100)
+//            view.centerX(20).centerY(210)
+            
+            
+            
+//            view.size(width: 50%, height: 10%)
+
 //            view.top.left.margin(20)
 //            view.top.margin(50).left.bottom.margin(15)
-            
-            view.size(10%, 100%)
 //            view.right.top.margin(10%).bottom(20%)
            
         }
+        print(v.frame)
     }
 
 

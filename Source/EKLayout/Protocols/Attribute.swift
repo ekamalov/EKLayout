@@ -31,9 +31,6 @@ public protocol AttributeVariables{
     var trailing: Self { get }
     var width: Self { get }
     var height: Self { get }
-    var centerX: Self { get }
-    var centerY: Self { get }
-    var lastBaseline: Self { get }
 }
 
 public protocol AttributeMethods{
@@ -47,6 +44,7 @@ public protocol AttributeMethods{
     func height(_ offset:Value) -> Self
     func centerX(_ offset:Value) -> Self
     func centerY(_ offset:Value) -> Self
-    func lastBaseline(_ offset:Value) -> Self
+    func equalToSuperView()
+    func all(_ offset: Value)
 }
 

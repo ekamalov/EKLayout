@@ -36,17 +36,22 @@ public final class EKLayout {
     internal static func activateLayout(view:Layoutable,closure:EKLayoutBuilderClosure)  {
         let layt = EKLayout(view: view)
         closure(layt)
-    
-        layt.repository.getProdConstraint().forEach {
-            print($0)
+        var constraints:[EKLayoutConstraint] = []
+        layt.repository.getProdConstraint().forEach { const in
+            let tempConst = EKLayoutConstraint(item: const.newView, attribute: const.newViewAttribute,
+                                               relatedBy: const.relation, toItem: const.relativeView,
+                                               attribute: const.relativeViewAttribute ?? .notAnAttribute, multiplier: 1, constant: const.value)
+            constraints.append(tempConst)
+            
         }
+        NSLayoutConstraint.activate(constraints)
         print("layout activated")
     }
     
 }
 
 extension EKLayout {
-    internal func prepareTempBuffer(_ attribute: EKLayoutAttribute) -> EKLayout {
+    internal func addConst(_ attribute: EKLayoutAttribute) -> EKLayout {
         self.repository.addTempConst(attribute)
         return self
     }
@@ -61,15 +66,18 @@ extension EKLayout {
         
         repository.getTempConstraint().forEach {
             var const:Constraint = $0
-            let superViewRect = const.from.superviewRect() ?? screenSize
+            let superViewRect = const.newView.superviewRect() ?? screenSize
             
-            if const.attribute == .top || const.attribute == .bottom {
+            if const.newViewAttribute == .top || const.newViewAttribute == .bottom {
                const.value = percent.of(superViewRect.height)
-            } else if const.attribute == .left || const.attribute == .right {
+            } else if const.newViewAttribute == .left || const.newViewAttribute == .right {
                 const.value = percent.of(superViewRect.width)
             }
-            self.repository.moveFromTempToProdSingle(constant: const)
+            
+            const.value = const.newViewAttribute == .right || const.newViewAttribute == .bottom ? -const.value : const.value
+            self.repository.moveFromTempToProdSingle(constraint: const)
         }
         return self
     }
 }
+

@@ -31,11 +31,15 @@ import UIKit
 
 public struct Constraint {
     
-    public let from:Layoutable
+    public let newView:Layoutable
     
-    public let to:Layoutable?
-    /// Value of the attribute
-    public let attribute: EKLayoutAttribute
+    public let relativeView:Layoutable?
+    
+    /// Attribute for new view
+    public let newViewAttribute: EKLayoutAttribute
+    
+    /// Attribute for new view
+    public let relativeViewAttribute: EKLayoutAttribute?
     
     /// Value of the constant
     public var value: CGFloat
@@ -43,15 +47,19 @@ public struct Constraint {
     /// Relation that applies to the `value` of the `Constant`
     public let relation: EKLayoutRelation
     
-    public init(item view1: Layoutable,superView view2: Layoutable?, attribute: EKLayoutAttribute,
-                value: CGFloat = 0,
-                relation: EKLayoutRelation = .equal) {
-        self.from = view1
-        self.to = view2
-        self.attribute = attribute
+    
+    // MARK: - Initializers
+    public init(newView nView: Layoutable,newViewAttribute nAttribute: EKLayoutAttribute,
+                relativeView relView: Layoutable? = nil, relativeAttribute relAttribute: EKLayoutAttribute? = .notAnAttribute,
+                value: CGFloat = 0, relation: EKLayoutRelation = .equal) {
+        self.newView = nView
+        self.newViewAttribute = nAttribute
+        self.relativeView = relView
+        self.relativeViewAttribute = relAttribute
         self.value = value
         self.relation = relation
     }
+   
 }
 
 extension Constraint:Hashable {
@@ -60,25 +68,7 @@ extension Constraint:Hashable {
     }
     public func hash(into hasher: inout Hasher) {
         hasher.combine(relation)
-//        hasher.combine(value)
-        hasher.combine(attribute)
+        hasher.combine(newViewAttribute)
     }
 }
-extension Constraint:CustomStringConvertible {}
 
-
-
-
-
-extension CustomStringConvertible {
-    public var description : String {
-        var description: String = ""
-        let selfMirror = Mirror(reflecting: self)
-        for child in selfMirror.children {
-            if let propertyName = child.label {
-                description += "\(propertyName): \(child.value)\t"
-            }
-        }
-        return description
-    }
-}
