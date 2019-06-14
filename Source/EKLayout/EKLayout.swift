@@ -45,7 +45,9 @@ public final class EKLayout {
             
         }
         NSLayoutConstraint.activate(constraints)
-        print("layout activated")
+        #if DEBUG
+            print("layout activated")
+        #endif
     }
     
 }
