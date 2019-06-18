@@ -32,11 +32,13 @@ class ViewController: UIViewController {
 //            view.centerX(20).top(100)
 //        }
         
-        v1.layout {
-            $0.all(45%)
-        }
+        v1.layout { $0.all(35%) }
        
-        
+        v.layout {
+            $0.centerX().centerY().size(width: 10%, height: 10%)
+        }
+
+        print(v1.frame)
         print(v.frame)
     }
 
