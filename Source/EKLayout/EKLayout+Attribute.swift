@@ -47,21 +47,12 @@ extension EKLayout: AttributeVariables {
     public var trailing: EKLayout {
         return self.addConst(.trailing)
     }
-    
-    public var width: EKLayout {
-        return self.addConst(.width)
-    }
-    
-    public var height: EKLayout {
-        return self.addConst(.height)
-    }
-    
 }
 
 
 // MARK: - Methods
 extension EKLayout:AttributeMethods {
-
+    
     @discardableResult
     public func left(_ offset: Value) -> EKLayout {
         return self.left.margin(offset)
@@ -94,12 +85,20 @@ extension EKLayout:AttributeMethods {
     
     @discardableResult
     public func width(_ offset: Value) -> EKLayout {
-        return self.width.margin(offset)
+        let superViewRect = self.view.superviewRect() ?? screenSize
+        if let percentOffset = offset as? Percent {
+            return self.addConst(.width).margin(percentOffset.of(superViewRect.width))
+        }
+        return self.addConst(.width).margin(offset.toCGFloat)
     }
     
     @discardableResult
     public func height(_ offset: Value) -> EKLayout {
-        return self.height.margin(offset)
+        let superViewRect = self.view.superviewRect() ?? screenSize
+        if let percentOffset = offset as? Percent {
+            return self.addConst(.height).margin(percentOffset.of(superViewRect.height))
+        }
+        return self.addConst(.height).margin(offset.toCGFloat)
     }
     
     @discardableResult

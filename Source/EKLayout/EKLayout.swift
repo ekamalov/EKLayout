@@ -60,7 +60,6 @@ extension EKLayout {
     
     @discardableResult
     public func margin(_ value:Value)-> EKLayout {
-        
         guard let percent = value as? Percent else {
             self.repository.moveTempConstToProdMult(constant: value.toCGFloat)
             return self
@@ -75,7 +74,6 @@ extension EKLayout {
             } else if const.newViewAttribute == .left || const.newViewAttribute == .right {
                 const.value = percent.of(superViewRect.width)
             }
-            
             const.value = const.newViewAttribute == .right || const.newViewAttribute == .bottom ? -const.value : const.value
             self.repository.moveFromTempToProdSingle(constraint: const)
         }

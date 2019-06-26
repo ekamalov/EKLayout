@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450AADF122B8DCCD00D50833 /* Example.app in Resources */ = {isa = PBXBuildFile; fileRef = 45A04BBF2266FAD900AE6E23 /* Example.app */; };
 		459EAAE9227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
 		459EAAEA227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
 		459EAAEB227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
@@ -116,8 +117,8 @@
 		45A04B942266F8D200AE6E23 = {
 			isa = PBXGroup;
 			children = (
-				45A04BA02266F8D200AE6E23 /* Source */,
 				45A04BC02266FAD900AE6E23 /* Example */,
+				45A04BA02266F8D200AE6E23 /* Source */,
 				45A04BAB2266F8D200AE6E23 /* EKLayoutTests */,
 				45A04B9F2266F8D200AE6E23 /* Products */,
 			);
@@ -155,9 +156,9 @@
 		45A04BBA2266F90700AE6E23 /* EKLayout */ = {
 			isa = PBXGroup;
 			children = (
-				45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */,
 				45A04BD12266FB3E00AE6E23 /* Protocols */,
 				45A04BD82266FB3E00AE6E23 /* Models */,
+				45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */,
 				45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */,
 				45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */,
 				459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */,
@@ -314,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450AADF122B8DCCD00D50833 /* Example.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
