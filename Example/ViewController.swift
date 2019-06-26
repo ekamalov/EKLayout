@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+ 
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -34,9 +34,9 @@ class ViewController: UIViewController {
         
         //        v1.layout { $0.left.right.margin(6.7%).height(33.1%).centerY() }
         
-        v.layout {
-            $0.size(200).right(20%).bottom(20)
-        }
+//        v.layout {
+//            $0.size(200).right(20%).bottom(20)
+//        }
         
         print(v1.frame)
         print(v.frame)
