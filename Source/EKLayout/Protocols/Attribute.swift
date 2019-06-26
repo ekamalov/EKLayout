@@ -27,8 +27,6 @@ public protocol AttributeVariables{
     var right: Self { get }
     var top: Self { get }
     var bottom: Self { get }
-    var leading: Self { get }
-    var trailing: Self { get }
 }
 
 public protocol AttributeMethods{
@@ -36,8 +34,6 @@ public protocol AttributeMethods{
     func right(_ offset:Value) -> Self
     func top(_ offset:Value) -> Self
     func bottom(_ offset:Value) -> Self
-    func leading(_ offset:Value) -> Self
-    func trailing(_ offset:Value) -> Self
     func width(_ offset:Value) -> Self
     func height(_ offset:Value) -> Self
     func centerX(_ offset:Value) -> Self

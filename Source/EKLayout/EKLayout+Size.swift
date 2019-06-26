@@ -22,9 +22,7 @@
  
  import UIKit
  
- 
  extension EKLayout {
-    
     @discardableResult
     public func size(_ value:Value) -> EKLayout{
         return self.size(width: value, height: value)

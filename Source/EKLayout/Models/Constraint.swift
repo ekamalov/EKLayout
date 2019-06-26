@@ -21,32 +21,19 @@
 //  SOFTWARE.
 
 import UIKit
-
-
-///**
-// Struct that aggregates `NSLayoutRelation`, constant and multiplier of a
-// layout constraint eventually created
-// */
-
-
 public struct Constraint {
-    
+
     public let newView:Layoutable
     
     public let relativeView:Layoutable?
     
-    /// Attribute for new view
     public let newViewAttribute: EKLayoutAttribute
     
-    /// Attribute for new view
     public let relativeViewAttribute: EKLayoutAttribute?
     
-    /// Value of the constant
     public var value: CGFloat
     
-    /// Relation that applies to the `value` of the `Constant`
     public let relation: EKLayoutRelation
-    
     
     // MARK: - Initializers
     public init(newView nView: Layoutable,newViewAttribute nAttribute: EKLayoutAttribute,
@@ -59,7 +46,6 @@ public struct Constraint {
         self.value = value
         self.relation = relation
     }
-   
 }
 
 extension Constraint:Hashable {

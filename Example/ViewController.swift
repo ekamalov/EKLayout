@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,21 +27,21 @@ class ViewController: UIViewController {
         }, completion: nil)
         
         
-//        v.layout { view in
-//            view.size(width: 100, height: 100)
-//            view.centerX(20).top(100)
-//        }
+        //        v.layout { view in
+        //            view.size(width: 100, height: 100)
+        //            view.centerX(20).top(100)
+        //        }
         
-        v1.layout { $0.left.right.margin(6.7%).height(33.1%).centerY() }
-       
+        //        v1.layout { $0.left.right.margin(6.7%).height(33.1%).centerY() }
+        
         v.layout {
-            $0.centerX().centerY().size(width: 100, height: 100)
+            $0.size(200).right(20%).bottom(20)
         }
         
         print(v1.frame)
         print(v.frame)
     }
-
-
+    
+    
 }
 

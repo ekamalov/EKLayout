@@ -35,8 +35,8 @@ extension Layoutable {
         return view.superview
     }
     
-    internal func superviewRect() -> CGRect? {
-        return superview?.frame
+    internal var superviewRect:CGRect {
+        return superview?.frame ?? screenSize
     }
     
 }

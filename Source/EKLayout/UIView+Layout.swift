@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 extension EKLayoutableView:Layoutable {
     public func layout(_ closure: EKLayoutBuilderClosure)  {
         EKLayout.activateLayout(view: self, closure: closure)
