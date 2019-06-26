@@ -22,7 +22,6 @@
 
 import UIKit
 
-
 public protocol Value {}
 
 extension Int: Value {}
@@ -35,10 +34,7 @@ extension CGFloat: Value {}
 
 extension Percent: Value {}
 
-
-
 extension Value {
-    
     var toCGFloat:CGFloat {
         switch self {
         case let value as CGFloat: return value
@@ -51,7 +47,6 @@ extension Value {
         }
     }
 }
-
 
 /// This struct used for calculating percent
 public struct Percent {

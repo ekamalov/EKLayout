@@ -29,8 +29,6 @@ public protocol AttributeVariables{
     var bottom: Self { get }
     var leading: Self { get }
     var trailing: Self { get }
-    var width: Self { get }
-    var height: Self { get }
 }
 
 public protocol AttributeMethods{
