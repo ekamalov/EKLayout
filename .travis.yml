@@ -8,11 +8,15 @@ env:
         - PROJECT=EKLayout.xcodeproj
         - SCHEME=EKLayout
 
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+
 install:
     - gem install xcpretty
 
 
 script:
     - set -o pipefail
-    - xcodebuild clean build test -project "$PROJECT" -scheme "$SCHEME" -destination "OS=12.2,name=iPhone X" -configuration Debug | xcpretty
+    - travis_retry xcodebuild clean build test -project "$PROJECT" -scheme "$SCHEME" -destination "OS=12.2,name=iPhone X" -configuration Debug | xcpretty
     - bash <(curl -s https://codecov.io/bash) -J 'EKLayout'

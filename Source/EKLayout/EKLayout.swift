@@ -22,7 +22,6 @@
 
 import UIKit
 
-
 public final class EKLayout {
     
     internal let view:Layoutable
@@ -42,11 +41,10 @@ public final class EKLayout {
                                                relatedBy: const.relation, toItem: const.relativeView,
                                                attribute: const.relativeViewAttribute ?? .notAnAttribute, multiplier: 1, constant: const.value)
             constraints.append(tempConst)
-            
         }
         NSLayoutConstraint.activate(constraints)
         #if DEBUG
-            print("layout activated")
+        print("layout activated")
         #endif
     }
     
@@ -67,14 +65,18 @@ extension EKLayout {
         
         repository.getTempConstraint().forEach {
             var const:Constraint = $0
-            let superViewRect = const.newView.superviewRect() ?? screenSize
+            let superViewRect = const.newView.superviewRect
             
-            if const.newViewAttribute == .top || const.newViewAttribute == .bottom {
-               const.value = percent.of(superViewRect.height)
-            } else if const.newViewAttribute == .left || const.newViewAttribute == .right {
-                const.value = percent.of(superViewRect.width)
+            switch const.newViewAttribute {
+            case .top, .bottom, .height, .centerY: const.value = percent.of(superViewRect.height)
+            case .left, .right, .width, .centerX: const.value = percent.of(superViewRect.width)
+            default: break
             }
-            const.value = const.newViewAttribute == .right || const.newViewAttribute == .bottom ? -const.value : const.value
+            
+            if const.newViewAttribute == .right || const.newViewAttribute == .bottom {
+                const.value = -const.value
+            }
+            
             self.repository.moveFromTempToProdSingle(constraint: const)
         }
         return self

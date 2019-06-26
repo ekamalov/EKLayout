@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		450AADF122B8DCCD00D50833 /* Example.app in Resources */ = {isa = PBXBuildFile; fileRef = 45A04BBF2266FAD900AE6E23 /* Example.app */; };
 		459EAAE9227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
 		459EAAEA227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
-		459EAAEB227845A700796EA9 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
 		459EAAED227845DC00796EA9 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
 		459EAAEE227845DC00796EA9 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
-		459EAAEF227845DC00796EA9 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
 		45A04BA82266F8D200AE6E23 /* EKLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A04B9E2266F8D200AE6E23 /* EKLayout.framework */; };
 		45A04BAD2266F8D200AE6E23 /* EKLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BAC2266F8D200AE6E23 /* EKLayoutTests.swift */; };
 		45A04BAF2266F8D200AE6E23 /* EKLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 45A04BA12266F8D200AE6E23 /* EKLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,31 +21,33 @@
 		45A04BCC2266FADA00AE6E23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A04BCA2266FADA00AE6E23 /* LaunchScreen.storyboard */; };
 		45A04BDD2266FB3E00AE6E23 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
 		45A04BDE2266FB3E00AE6E23 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
-		45A04BDF2266FB3E00AE6E23 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
 		45A04BE02266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
 		45A04BE12266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
-		45A04BE22266FB3E00AE6E23 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
 		45A04BE62266FB3E00AE6E23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
 		45A04BE72266FB3E00AE6E23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
-		45A04BE82266FB3E00AE6E23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
 		45A04BE92266FB3E00AE6E23 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */; };
 		45A04BEA2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */; };
-		45A04BEB2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */; };
 		45A04BEC2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */; };
 		45A04BED2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */; };
-		45A04BEE2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */; };
 		45A04BEF2266FB3E00AE6E23 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD92266FB3E00AE6E23 /* Typealias.swift */; };
 		45A04BF02266FB3E00AE6E23 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD92266FB3E00AE6E23 /* Typealias.swift */; };
-		45A04BF12266FB3E00AE6E23 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD92266FB3E00AE6E23 /* Typealias.swift */; };
 		45A04BF22266FB3E00AE6E23 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDA2266FB3E00AE6E23 /* Constraint.swift */; };
 		45A04BF32266FB3E00AE6E23 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDA2266FB3E00AE6E23 /* Constraint.swift */; };
-		45A04BF42266FB3E00AE6E23 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDA2266FB3E00AE6E23 /* Constraint.swift */; };
 		45A04BF52266FB3E00AE6E23 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
 		45A04BF62266FB3E00AE6E23 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
-		45A04BF72266FB3E00AE6E23 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
 		45A04C222276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
 		45A04C232276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
-		45A04C242276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
+		45FE874422C3B2B900685317 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD52266FB3E00AE6E23 /* Attribute.swift */; };
+		45FE874522C3B2B900685317 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD22266FB3E00AE6E23 /* Layoutable.swift */; };
+		45FE874622C3B2B900685317 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD32266FB3E00AE6E23 /* Value.swift */; };
+		45FE874722C3B2BD00685317 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD92266FB3E00AE6E23 /* Typealias.swift */; };
+		45FE874822C3B2BD00685317 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDA2266FB3E00AE6E23 /* Constraint.swift */; };
+		45FE874922C3B2BD00685317 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD62266FB3E00AE6E23 /* UIView+Layout.swift */; };
+		45FE874A22C3B2BD00685317 /* EKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BDB2266FB3E00AE6E23 /* EKLayout.swift */; };
+		45FE874B22C3B2BD00685317 /* EKLayout+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04C212276D51600AE6E23 /* EKLayout+Attribute.swift */; };
+		45FE874C22C3B2BD00685317 /* EKLayout+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAE8227845A700796EA9 /* EKLayout+Relative.swift */; };
+		45FE874D22C3B2BD00685317 /* EKLayout+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EAAEC227845DC00796EA9 /* EKLayout+Size.swift */; };
+		45FE874E22C3B2BD00685317 /* EKLayout+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A04BD72266FB3E00AE6E23 /* EKLayout+Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,9 +302,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				45A04BBE2266FAD900AE6E23 /* Example */,
 				45A04B9D2266F8D200AE6E23 /* EKLayout */,
 				45A04BA62266F8D200AE6E23 /* EKLayoutTests */,
-				45A04BBE2266FAD900AE6E23 /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -315,7 +314,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				450AADF122B8DCCD00D50833 /* Example.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,19 +399,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A04BE82266FB3E00AE6E23 /* Attribute.swift in Sources */,
-				45A04BF12266FB3E00AE6E23 /* Typealias.swift in Sources */,
-				459EAAEF227845DC00796EA9 /* EKLayout+Size.swift in Sources */,
-				45A04BDF2266FB3E00AE6E23 /* Layoutable.swift in Sources */,
+				45FE874B22C3B2BD00685317 /* EKLayout+Attribute.swift in Sources */,
+				45FE874922C3B2BD00685317 /* UIView+Layout.swift in Sources */,
+				45FE874422C3B2B900685317 /* Attribute.swift in Sources */,
+				45FE874522C3B2B900685317 /* Layoutable.swift in Sources */,
+				45FE874E22C3B2BD00685317 /* EKLayout+Repository.swift in Sources */,
+				45FE874C22C3B2BD00685317 /* EKLayout+Relative.swift in Sources */,
+				45FE874A22C3B2BD00685317 /* EKLayout.swift in Sources */,
+				45FE874D22C3B2BD00685317 /* EKLayout+Size.swift in Sources */,
+				45FE874822C3B2BD00685317 /* Constraint.swift in Sources */,
+				45FE874622C3B2B900685317 /* Value.swift in Sources */,
 				45A04BC42266FAD900AE6E23 /* ViewController.swift in Sources */,
-				459EAAEB227845A700796EA9 /* EKLayout+Relative.swift in Sources */,
+				45FE874722C3B2BD00685317 /* Typealias.swift in Sources */,
 				45A04BC22266FAD900AE6E23 /* AppDelegate.swift in Sources */,
-				45A04C242276D51600AE6E23 /* EKLayout+Attribute.swift in Sources */,
-				45A04BEE2266FB3E00AE6E23 /* EKLayout+Repository.swift in Sources */,
-				45A04BEB2266FB3E00AE6E23 /* UIView+Layout.swift in Sources */,
-				45A04BF72266FB3E00AE6E23 /* EKLayout.swift in Sources */,
-				45A04BF42266FB3E00AE6E23 /* Constraint.swift in Sources */,
-				45A04BE22266FB3E00AE6E23 /* Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
