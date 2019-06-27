@@ -35,6 +35,7 @@ public final class EKLayout {
     internal static func activateLayout(view:Layoutable,closure:EKLayoutBuilderClosure)  {
         let layt = EKLayout(view: view)
         closure(layt)
+        layt.view.removeConstraints()
         var constraints:[EKLayoutConstraint] = []
         layt.repository.getProdConstraint().forEach { const in
             let tempConst = EKLayoutConstraint(item: const.newView, attribute: const.newViewAttribute,

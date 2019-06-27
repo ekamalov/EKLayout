@@ -29,7 +29,10 @@ extension Layoutable {
         guard let view = self as? EKLayoutableView else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
     }
-    
+    internal func removeConstraints(){
+        guard let view = self as? EKLayoutableView else { return }
+        view.removeConstraints(view.constraints)
+    }
     internal var superview: EKLayoutableView? {
         guard let view = self as? EKLayoutableView else { return nil }
         return view.superview
