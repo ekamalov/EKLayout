@@ -28,7 +28,6 @@ public typealias EKLayoutConstraint = NSLayoutConstraint
 public typealias EKLayoutAttribute = EKLayoutConstraint.Attribute
 public typealias EKLayoutRelation = EKLayoutConstraint.Relation
 
-
 public typealias EKLayoutableView = UIView
 
 let screenSize = UIScreen.main.bounds
