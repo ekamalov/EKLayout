@@ -25,26 +25,38 @@ import UIKit
 extension EKLayout {
     // MARK: - Public methods
     @discardableResult
-    public func left(of relativeView: Layoutable, aligned: EKLayoutAttribute = .left ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
+    public func left(of relativeView: Layoutable, _ offset:Value = 0, aligned: EKLayoutAttribute = .left, relation: EKLayoutRelation = .equal) -> EKLayout {
         self.addRelativeConstraint(.left, of: relativeView, aligned: aligned, offset.toCGFloat, relation: relation)
         return self
     }
     
     @discardableResult
-    public func right(of relativeView: Layoutable, aligned: EKLayoutAttribute = .right ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
+    public func right(of relativeView: Layoutable, _ offset:Value = 0, aligned: EKLayoutAttribute = .right, relation: EKLayoutRelation = .equal) -> EKLayout {
         self.addRelativeConstraint(.right, of: relativeView, aligned: aligned, -offset.toCGFloat, relation: relation)
         return self
     }
     
     @discardableResult
-    public func top(of relativeView: Layoutable, aligned: EKLayoutAttribute = .top ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
+    public func top(of relativeView: Layoutable,_ offset:Value = 0, aligned: EKLayoutAttribute = .top, relation: EKLayoutRelation = .equal) -> EKLayout {
         self.addRelativeConstraint(.top, of: relativeView, aligned: aligned, offset.toCGFloat, relation: relation)
         return self
     }
     
     @discardableResult
-    public func bottom(of relativeView: Layoutable, aligned: EKLayoutAttribute = .bottom ,  _ offset:Value = 0, relation: EKLayoutRelation = .equal) -> EKLayout {
+    public func bottom(of relativeView: Layoutable, _ offset:Value = 0, aligned: EKLayoutAttribute = .bottom, relation: EKLayoutRelation = .equal) -> EKLayout {
         self.addRelativeConstraint(.bottom, of: relativeView, aligned: aligned, -offset.toCGFloat, relation: relation)
+        return self
+    }
+    
+    @discardableResult
+    public func centerX(of relativeView: Layoutable, _ offset:Value = 0, aligned: EKLayoutAttribute = .centerX, relation: EKLayoutRelation = .equal) -> EKLayout {
+        self.addRelativeConstraint(.centerX, of: relativeView, aligned: aligned, offset.toCGFloat, relation: relation)
+        return self
+    }
+    
+    @discardableResult
+    public func centerY(of relativeView: Layoutable, _ offset:Value = 0, aligned: EKLayoutAttribute = .centerY, relation: EKLayoutRelation = .equal) -> EKLayout {
+        self.addRelativeConstraint(.centerY, of: relativeView, aligned: aligned, offset.toCGFloat, relation: relation)
         return self
     }
     
