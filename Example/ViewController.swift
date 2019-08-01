@@ -32,21 +32,12 @@ class ViewController: UIViewController {
         }, completion: nil)
         
         
-        //        v.layout { view in
-        //            view.size(width: 100, height: 100)
-        //            view.centerX(20).top(100)
-        //        }
+        v.layout { view in
+            view.size(width: 100, height: 100)
+            view.centerX().top(100)
+        }
         
-        //        v1.layout { $0.left.right.margin(6.7%).height(33.1%).centerY() }
-        
-//        v.layout {
-//            $0.size(200).right(20%).bottom(20)
-//        }
-        
-//        v.layout { $0.left.right.margin(6.7%).height(33.1%).centerY() }
-//        self.titles.layout { $0.left.top.margin(25).size(width: 200, height: 50) }
-
-        
+        v1.layout {$0.centerX(of: v, 20).top(of: v, 20, aligned: .bottom).size(width: 50, height: 50) }
         
         print(v1.frame)
         print(v.frame)
