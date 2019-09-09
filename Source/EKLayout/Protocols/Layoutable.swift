@@ -31,6 +31,8 @@ extension Layoutable {
     }
     internal func removeConstraints(){
         guard let view = self as? EKLayoutableView else { return }
+        let constraints = self.superview?.constraints.filter { $0.firstItem as? UIView == view || $0.secondItem as? UIView == view } ?? []
+        superview?.removeConstraints(constraints)
         view.removeConstraints(view.constraints)
     }
     internal var superview: EKLayoutableView? {

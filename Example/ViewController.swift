@@ -15,20 +15,23 @@ class ViewController: UIViewController {
         lb.text = "Sign up"
         return lb
     }()
+    
+    
+    let v = UIView.init(frame: .init(x: 20, y: 10, width: 100, height: 100))
+    
+    let v1 = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        let v = UIView.init(frame: .init(x: 20, y: 10, width: 100, height: 100))
         v.backgroundColor = .red
-        
-        let v1 = UIView()
         v1.backgroundColor = .green
+
         
         v.addSubview(titles)
         UIView.transition(with: self.view, duration: 0.5, options: [.transitionCrossDissolve], animations: {
-            self.view.addSubview(v)
-            self.view.addSubview(v1)
+            self.view.addSubview(self.v)
+            self.view.addSubview(self.v1)
         }, completion: nil)
         
         
@@ -42,7 +45,15 @@ class ViewController: UIViewController {
         print(v1.frame)
         print(v.frame)
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        v.layout { view in
+            view.size(width: 100, height: 100)
+            view.centerX().top(100)
+        }
+        
+        v1.layout {$0.centerX(of: v, 20).top(of: v, 20, aligned: .bottom).size(width: 50, height: 50) }
+    }
     
 }
 
